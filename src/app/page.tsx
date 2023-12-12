@@ -21,6 +21,7 @@ type TRecipe = {
 
 async function getRecipes(): Promise<TRecipe[]> {
   const result = await fetch("http://localhost:5000/recipes");
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   return result.json();
 }
 
